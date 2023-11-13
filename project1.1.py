@@ -47,6 +47,7 @@ def maximum_grade():
         m = max_score - 50
     else:
         max_grade = ("F, Please Try Harder Next Year...")
+        m = 0
     print("Current Score: " + str(score[0]))
     print("Highest score possible is " + str(max_score))
     print("Highest grade possible is " + max_grade)
