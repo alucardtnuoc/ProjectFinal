@@ -1,54 +1,18 @@
+midterm_list = []
+final_list = []
+homework_list = []
+
+
 def maximum_grade():
-    a = input("Midterm Score Out Of 40,(ex.30) If You Haven't Get The Midterm Score Return - :")
-    if a == "-":
-        midterm = [0,0]
-    
-    else:
-        try:
-            x = float(a)
-            if 0< x <=40:
-                midterm = [float(a),40]
-            elif x > 40 or x < 0:
-                print("Midterm Score Should Be Between 0-40 ,Please Re-Enter The Data...\n|\n|\n|")
-                maximum_grade()
-        except:
-            print("Invalid Score Input,Please Re-Enter The Data...\n|\n|\n|")
-            maximum_grade()
-
-    b = input("Final Score Out Of 40,(ex.30) If You Haven't Get The Final Score Return - :")
-    if b == "-":
-        final = [0,0]
-    
-    else:
-        try:
-            x = float(b)
-            if 0< x <=40:
-                final = [float(b),40]
-            elif x > 40 or x < 0:
-                print("Final Score Should Be Between 0-40 ,Please Re-Enter The Data...\n|\n|\n|")
-                maximum_grade()
-        except:
-            print("Invalid Score Input,Please Re-Enter The Data...\n|\n|\n|")
-            maximum_grade()
-
-    c = input("Homework Score Out Of 20,(ex.15) If You Haven't Get The Homework Score Return - :")
-    if c == "-":
-        homework = [0,0]
-    
-    else:
-        try:
-            x = float(c)
-            if 0< x <=20:
-                homework = [float(c),20]
-            elif x > 20 or x < 0:
-                print("Home Work Score Should Be Between 0-20 ,Please Re-Enter The Data...\n|\n|\n|")
-                maximum_grade()
-        except:
-            print("Invalid Score Input,Please Re-Enter The Data...\n|\n|\n|")
-            maximum_grade()
+    global midterm_list
+    global final_list
+    global homework_list
+    midterm()
+    final()
+    homework()
 
 
-    score = [(midterm[0]+final[0]+homework[0]),(midterm[1]+final[1]+homework[1])]
+    score = [(midterm_list[0]+final_list[0]+homework_list[0]),(midterm_list[1]+final_list[1]+homework_list[1])]
     obtainable_score = 100 - float(score[1])
     max_score = obtainable_score + float(score[0])
     if max_score >= 80:
@@ -82,56 +46,14 @@ def maximum_grade():
     repeat()
     
 def minimum_grade():
-    a = input("Midterm Score Out Of 40,(ex.30) If You Haven't Get The Midterm Score Return - :")
-    if a == "-":
-        midterm = [0,0]
+    global midterm_list
+    global final_list
+    global homework_list
+    midterm()
+    final()
+    homework()
     
-    else:
-        try:
-            x = float(a)
-            if 0< x <=40:
-                midterm = [float(a),40]
-            elif x > 40 or x < 0:
-                print("Midterm Score Should Be Between 0-40 ,Please Re-Enter The Data...\n|\n|\n|")
-                minimum_grade()
-        except:
-            print("Invalid Score Input,Please Re-Enter The Data...\n|\n|\n|")
-            minimum_grade()
-
-    b = input("Final Score Out Of 40,(ex.30) If You Haven't Get The Final Score Return - :")
-    if b == "-":
-        final = [0,0]
-    
-    else:
-        try:
-            x = float(b)
-            if 0< x <=40:
-                final = [float(b),40]
-            elif x > 40 or x < 0:
-                print("Final Score Should Be Between 0-40 ,Please Re-Enter The Data...\n|\n|\n|")
-                minimum_grade()
-        except:
-            print("Invalid Score Input,Please Re-Enter The Data...\n|\n|\n|")
-            minimum_grade()
-
-    c = input("Homework Score Out Of 20,(ex.15) If You Haven't Get The Homework Score Return - :")
-    if c == "-":
-        homework = [0,0]
-    
-    else:
-        try:
-            x = float(c)
-            if 0< x <=20:
-                homework = [float(c),20]
-            elif x > 20 or x < 0:
-                print("Home Work Score Should Be Between 0-20 ,Please Re-Enter The Data...\n|\n|\n|")
-                minimum_grade()
-        except:
-            print("Invalid Score Input,Please Re-Enter The Data...\n|\n|\n|")
-            minimum_grade()
-
-
-    score = [(midterm[0]+final[0]+homework[0]),(midterm[1]+final[1]+homework[1])]
+    score = [(midterm_list[0]+final_list[0]+homework_list[0]),(midterm_list[1]+final_list[1]+homework_list[1])]
     min_score = score[0]
     if min_score < 50:
         min_grade = "---"
@@ -194,56 +116,15 @@ def start():
         repeat()
 
 def yes():
-    a = input("Midterm Score Out Of 40,(ex.30) If You Haven't Get The Midterm Score Return - :")
-    if a == "-":
-        midterm = [0,0]
-    
-    else:
-        try:
-            x = float(a)
-            if 0< x <=40:
-                midterm = [float(a),40]
-            elif x > 40 or x < 0:
-                print("Midterm Score Should Be Between 0-40 ,Please Re-Enter The Data...\n|\n|\n|")
-                yes()
-        except:
-            print("Invalid Score Input,Please Re-Enter The Data...\n|\n|\n|")
-            yes()
-
-    b = input("Final Score Out Of 40,(ex.30) If You Haven't Get The Final Score Return - :")
-    if b == "-":
-        final = [0,0]
-    
-    else:
-        try:
-            x = float(b)
-            if 0< x <=40:
-                final = [float(b),40]
-            elif x > 40 or x < 0:
-                print("Final Score Should Be Between 0-40 ,Please Re-Enter The Data...\n|\n|\n|")
-                yes()
-        except:
-            print("Invalid Score Input,Please Re-Enter The Data...\n|\n|\n|")
-            yes()
-
-    c = input("Homework Score Out Of 20,(ex.15) If You Haven't Get The Homework Score Return - :")
-    if c == "-":
-        homework = [0,0]
-    
-    else:
-        try:
-            x = float(c)
-            if 0< x <=20:
-                homework = [float(c),20]
-            elif x > 20 or x < 0:
-                print("Home Work Score Should Be Between 0-20 ,Please Re-Enter The Data...\n|\n|\n|")
-                yes()
-        except:
-            print("Invalid Score Input,Please Re-Enter The Data...\n|\n|\n|")
-            yes()
+    global midterm_list
+    global final_list
+    global homework_list
+    midterm()
+    final()
+    homework()
 
 
-    score = [(midterm[0]+final[0]+homework[0]),(midterm[1]+final[1]+homework[1])]
+    score = [(midterm_list[0]+final_list[0]+homework_list[0]),(midterm_list[1]+final_list[1]+homework_list[1])]
     grade  = input("Insert The Grade You Want(A,B+,B,C+,C,D+,D):")
     obtainable_score = 100 - float(score[1])
     if grade == "A":
@@ -314,5 +195,65 @@ def yes():
         yes()
     repeat()
 
+def midterm():
+    global midterm_list
+    a = input("Midterm Score Out Of 40,(ex.30) If You Haven't Get The Midterm Score Return - :")
+    if a == "-":
+        midterm_list = [0,0]
+        
+    else:
+        try:
+            x = float(a)
+            if 0< x <=40:
+                midterm_list = [float(a),40]
+            elif x > 40 or x < 0:
+                print("Midterm Score Should Be Between 0-40 ,Please Re-Enter The Data...\n|\n|\n|")
+                midterm()
+                return
+        except:
+            print("Invalid Score Input,Please Re-Enter The Data...\n|\n|\n|")
+            midterm()
+            return
+
+    
+def final():
+    global final_list
+    b = input("Final Score Out Of 40,(ex.30) If You Haven't Get The Final Score Return - :")
+    if b == "-":
+        final_list = [0,0]
+    
+    else:
+        try:
+            x = float(b)
+            if 0<= x <=40:
+                final_list = [float(b),40]
+            elif x > 40 or x < 0:
+                print("Final Score Should Be Between 0-40 ,Please Re-Enter The Data...\n|\n|\n|")                
+                final()
+                return
+        except:
+            print("Invalid Score Input,Please Re-Enter The Data...\n|\n|\n|")
+            final()
+            return
+def homework():
+    global homework_list
+    c = input("Homework Score Out Of 20,(ex.15) If You Haven't Get The Homework Score Return - :")
+    if c == "-":
+        homework_list = [0,0]
+    
+    else:
+        try:
+            x = float(c)
+            if 0<= x <=20:
+                homework_list = [float(c),20]
+            elif x > 20 or x < 0:
+                print("Home Work Score Should Be Between 0-20 ,Please Re-Enter The Data...\n|\n|\n|")
+                homework()
+                return
+        except:
+            print("Invalid Score Input,Please Re-Enter The Data...\n|\n|\n|")
+            homework()
+            return
+    return homework
 start()
                 
